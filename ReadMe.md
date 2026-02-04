@@ -7,8 +7,14 @@ The system stores detected incidents in a SQLite database, generates visual tren
 
 ## 📌 Project Overview
 
-This project simulates a real-world **SOC / cybersecurity automation task**, where system logs are analyzed to identify potential security threats.  
-It is designed to demonstrate practical Python skills in **log analysis, threat detection, data processing, and visualization**.
+This project simulates a real-world **Security Operations Center (SOC)** automation task where system logs are analyzed to identify potential security threats.
+
+It demonstrates practical Python skills in:
+- Log parsing
+- Threat detection
+- Data processing
+- Visualization
+- Reporting
 
 ---
 
@@ -18,8 +24,8 @@ It is designed to demonstrate practical Python skills in **log analysis, threat 
 - ✅ Identifies brute-force attacks within a defined time window
 - ✅ Flags access to restricted URLs (e.g., `/admin`, `/config.php`)
 - ✅ Stores security events in a SQLite database
-- ✅ Generates security incident trend visualization
-- ✅ Exports detailed Excel reports for investigation
+- ✅ Generates a security incident trend visualization
+- ✅ Exports detailed Excel reports for further investigation
 
 ---
 
@@ -37,6 +43,7 @@ It is designed to demonstrate practical Python skills in **log analysis, threat 
 ## 📊 Sample Output
 
 ### Security Incident Trend
+
 The chart below visualizes detected security incidents over time, highlighting spikes caused by brute-force attacks and suspicious activity.
 
 ![Security Incident Trend](SecurityTrend.png)
@@ -47,9 +54,9 @@ The chart below visualizes detected security incidents over time, highlighting s
 
 1. Reads system/server log files (`logs.txt`)
 2. Applies detection rules defined in `rules.json`
-3. Flags suspicious activity based on thresholds
+3. Flags suspicious activity based on configurable thresholds
 4. Enriches IP addresses with geo-location data
-5. Stores events in a local database
+5. Stores events in a local SQLite database
 6. Generates visual and Excel-based reports
 
 ---
@@ -59,9 +66,4 @@ The chart below visualizes detected security incidents over time, highlighting s
 ### 1️⃣ Install dependencies
 ```bash
 pip install pandas matplotlib requests openpyxl
----
-
-### 2️⃣ Run the analyzer
-```bash
 python SecurityLogAnalyzer.py --log logs.txt
-
