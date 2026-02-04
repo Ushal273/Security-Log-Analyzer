@@ -1,0 +1,15 @@
+{
+    "RESTRICTED_URLS": {
+        "urls": ["/admin", "/config.php", "/backup.sql", "/wp-login"],
+        "severity": "High"
+    },
+    "FAILED_LOGIN_THRESHOLD": {
+        "count": 3,
+        "time_window_minutes": 5,
+        "severity": "High"
+    },
+    "FAILED_LOGIN_SIMPLE": {
+        "count": 3,
+        "severity": "Medium"
+    }
+}
