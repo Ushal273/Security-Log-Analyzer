@@ -1,19 +1,67 @@
-# Security Log Analyzer
+# 🔐 Security Log Analyzer
 
-**Author:** Ushal Koirala
-**Date:** 10/01/2026
-**Version:** PC:01
+A Python-based security log analysis tool that detects suspicious activities such as failed login attempts, brute-force attacks, and access to restricted resources.  
+The system stores detected incidents in a SQLite database, generates visual trend reports, and exports detailed results to Excel for further analysis.
 
-## Overview
-This python program reads server log files and identifies suspicious activity such as:
-- Multiple failed login attempts from the same IP address.
-- Access to restricted pages like `/admin` or `/config`.
-- Brute-force attempts (many failed logins in a short time).
+---
 
-## How to Use
-1. Place log files (`logs.txt`) in the same folder as the program.
-2. Make sure `rules.json` in the folder.
-3. Install required libraries:
-    py -m pip install pandas matplotlib requests openpyxl
-4. Open a terminal and run:
-py SecurityLogAnalyzer.py --log logs.txt
+## 📌 Project Overview
+
+This project simulates a real-world **SOC / cybersecurity automation task**, where system logs are analyzed to identify potential security threats.  
+It is designed to demonstrate practical Python skills in **log analysis, threat detection, data processing, and visualization**.
+
+---
+
+## 🚀 Key Features
+
+- ✅ Detects multiple failed login attempts
+- ✅ Identifies brute-force attacks within a defined time window
+- ✅ Flags access to restricted URLs (e.g., `/admin`, `/config.php`)
+- ✅ Stores security events in a SQLite database
+- ✅ Generates security incident trend visualization
+- ✅ Exports detailed Excel reports for investigation
+
+---
+
+## 🛠 Technologies Used
+
+- **Python**
+- **SQLite**
+- **Pandas**
+- **Matplotlib**
+- **Requests**
+- **JSON-based rule engine**
+
+---
+
+## 📊 Sample Output
+
+### Security Incident Trend
+The chart below visualizes detected security incidents over time, highlighting spikes caused by brute-force attacks and suspicious activity.
+
+![Security Incident Trend](SecurityTrend.png)
+
+---
+
+## ⚙️ How It Works
+
+1. Reads system/server log files (`logs.txt`)
+2. Applies detection rules defined in `rules.json`
+3. Flags suspicious activity based on thresholds
+4. Enriches IP addresses with geo-location data
+5. Stores events in a local database
+6. Generates visual and Excel-based reports
+
+---
+
+## ▶️ How to Run
+
+### 1️⃣ Install dependencies
+```bash
+pip install pandas matplotlib requests openpyxl
+---
+
+### 2️⃣ Run the analyzer
+```bash
+python SecurityLogAnalyzer.py --log logs.txt
+
